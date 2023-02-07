@@ -4,7 +4,7 @@ My "portfolio" website
 
 ## Developing
 
-Once you've cloned the repo with `git clone TODO` and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've cloned the repo with `git clone https://github.com/iamgabrieltv/iamgabrieltv.tk.git` and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
 npm run dev
