@@ -6,4 +6,6 @@
 
 <Navbar />
 
-<slot />
+<div class="ml-4 mr-4 mt-1">
+	<slot />
+</div>

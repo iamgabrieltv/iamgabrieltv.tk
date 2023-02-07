@@ -1,6 +1,6 @@
 # iamgabrieltv.tk
 
-My "portfolio" website
+My personal website with facts about me and my projects
 
 ## Developing
 
