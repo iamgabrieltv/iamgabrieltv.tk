@@ -16,7 +16,7 @@
 	<div class="navbar-end">
 		<label class="swap swap-rotate">
 			<!-- this hidden checkbox controls the state -->
-			<input type="checkbox" data-toggle-theme="dark,light" />
+			<input type="checkbox" data-toggle-theme="light,dark" />
 
 			<!-- sun icon -->
 			<svg
