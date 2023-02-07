@@ -10,7 +10,7 @@
 <div class="navbar bg-base-100 bg-opacity-90 backdrop-blur">
 	<div class="navbar-start ml-2 font-semibold">
 		<a class="mr-2" href="/">Home</a>
-		<a class="mr-2" href="/about">About me</a>
+		<a class="mr-2" href="/about">About</a>
 		<a class="mr-2" href="/projects">Projects</a>
 	</div>
 	<div class="navbar-end">
