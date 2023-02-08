@@ -15,6 +15,8 @@
 		<button on:click={() => signOut()} class="button">Sign out</button>
 	{:else}
 		<span class="notSignedInText">You are not signed in</span>
-		<button on:click={() => signIn('github', { callbackUrl: '/guestbook' })}>Sign In with GitHub</button>
+		<button on:click={() => signIn('github', { callbackUrl: '/guestbook' })}
+			>Sign In with GitHub</button
+		>
 	{/if}
 </p>
