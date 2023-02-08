@@ -1,6 +1,11 @@
 <script>
 	import { signIn, signOut } from '@auth/sveltekit/client';
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
+
+	onMount(function () {
+		console.log($page.data.session)
+	})
 </script>
 
 <h1>SvelteKit Auth Example</h1>
