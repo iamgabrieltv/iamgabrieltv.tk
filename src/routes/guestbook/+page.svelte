@@ -12,9 +12,9 @@
 <p>
 	{#if $page.data.session}
 		{#if $page.data.session.user?.image}
-			<span style="background-image: url('{$page.data.session.user.image}')" class="avatar" />
+			<span style="background-image: url('{$page.data.session.user.image}')" class="w-96" />
 		{/if}
-		<span class="signedInText">
+		<span class="w-full">
 			<small>Signed in as</small><br />
 			<strong>{$page.data.session.user?.name ?? 'User'}</strong>
 		</span>
