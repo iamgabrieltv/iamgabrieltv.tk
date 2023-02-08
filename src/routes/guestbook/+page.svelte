@@ -18,6 +18,7 @@
 			<small>Signed in as</small><br />
 			<strong>{$page.data.session.user?.name ?? 'User'}</strong>
 		</span>
+		<p>Session expiry: {$page.data.session?.expires}</p>
 		<button on:click={() => signOut()} class="button">Sign out</button>
 	{:else}
 		<span class="notSignedInText">You are not signed in</span>
