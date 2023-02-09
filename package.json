@@ -29,8 +29,11 @@
 	"dependencies": {
 		"@auth/core": "^0.4.0",
 		"@auth/sveltekit": "^0.2.1",
+		"@planetscale/database": "^1.5.0",
 		"@sveltejs/adapter-vercel": "^2.0.1",
 		"daisyui": "^2.50.0",
+		"kysely": "^0.23.4",
+		"kysely-planetscale": "^1.2.1",
 		"theme-change": "^2.3.0"
 	}
 }
