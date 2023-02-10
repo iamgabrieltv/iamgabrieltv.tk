@@ -29,8 +29,10 @@
 	"dependencies": {
 		"@auth/core": "^0.4.0",
 		"@auth/sveltekit": "^0.2.1",
+		"@supabase/supabase-js": "^2.7.1",
 		"@sveltejs/adapter-vercel": "^2.0.1",
 		"daisyui": "^2.50.0",
-		"theme-change": "^2.3.0"
+		"theme-change": "^2.3.0",
+		"uuid": "^9.0.0"
 	}
 }
