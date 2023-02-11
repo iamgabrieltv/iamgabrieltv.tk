@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import LoginButton from '$lib/loginButton.svelte';
+	import { signIn, signOut } from '@auth/sveltekit/client';
 	import { supabase } from '$lib/supabase';
 	import { v4 as uuidv4 } from 'uuid';
 
@@ -16,14 +16,12 @@
 			const record = { username: $page.data.session?.user?.name, message: newMessage };
 			messages = [...messages, record];
 
-			const { error } = await supabase
-				.from('guestbook')
-				.insert({
-					username: $page.data.session?.user?.name,
-					message: newMessage,
-					email: $page.data.session?.user?.email,
-					id: uuidv4()
-				});
+			const { error } = await supabase.from('guestbook').insert({
+				username: $page.data.session?.user?.name,
+				message: newMessage,
+				email: $page.data.session?.user?.email,
+				id: uuidv4()
+			});
 		}
 	}
 </script>
@@ -41,13 +39,16 @@
 			type="text"
 			placeholder="Message"
 			id="input"
-			class="input w-full max-w-xs bg-base-200"
+			class="input w-full max-w-xs bg-base-200 mb-1 mt-1"
 			bind:value={newMessage}
 		/>
 		<button type="submit" class="btn btn-ghost bg-base-300">Sign</button>
 	</form>
 {:else}
-	<LoginButton />
+	<button class="btn gap-2 bg-black" on:click={() => signIn('github')}>
+		<img src="/github-mark-white.png" class="w-[2rem]" />
+		Sign In with GitHub
+	</button>
 {/if}
 
 <ul class="flex flex-col-reverse">

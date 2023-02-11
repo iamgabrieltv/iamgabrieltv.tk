@@ -1,7 +1,7 @@
 <script>
 	import '../app.css';
 
-	import Navbar from '../lib/navbar.svelte';
+	import Navbar from '../lib/components/navbar.svelte';
 </script>
 
 <div class="drawer drawer-mobile">
