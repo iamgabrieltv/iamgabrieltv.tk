@@ -31,9 +31,9 @@
 
 {#if $page.data.session}
 	<small
-		>You are logged in as {$page.data.session.user?.name} ({$page.data.session.user?.email})</small>
-<br />
-	<small on:click={() => signOut()}><strong>Sign Out</strong></small>
+		>You are logged in as <strong>{$page.data.session.user?.name}</strong></small>
+	<br />
+	<small class="cursor-pointer" on:click={() => signOut()}><strong>Sign Out</strong></small>
 
 	<form on:submit|preventDefault={sendMessage}>
 		<input
@@ -47,10 +47,12 @@
 	</form>
 {:else}
 	<button class="btn gap-2 bg-black" on:click={() => signIn('github')}>
-		<img src="/github-mark-white.png" class="w-[2rem]" />
+		<img src="/github-mark-white.png" class="w-8" />
 		Sign In with GitHub
 	</button>
 {/if}
+
+<div class="bg-base-300 rounded-sm w-auto h-1 my-4 mx-2"></div>
 
 <ul class="flex flex-col-reverse">
 	{#each messages as message}
