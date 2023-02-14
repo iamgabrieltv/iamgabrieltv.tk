@@ -31,8 +31,9 @@
 
 {#if $page.data.session}
 	<small
-		>You are logged in as {$page.data.session.user?.name} ({$page.data.session.user?.email})</small
-	>
+		>You are logged in as {$page.data.session.user?.name} ({$page.data.session.user?.email})</small>
+
+	<small on:click={() => signOut()}>Sign Out</small>
 
 	<form on:submit|preventDefault={sendMessage}>
 		<input
