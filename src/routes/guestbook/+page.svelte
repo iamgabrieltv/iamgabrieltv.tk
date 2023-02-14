@@ -46,9 +46,13 @@
 		<button type="submit" class="btn btn-ghost bg-base-300">Sign</button>
 	</form>
 {:else}
-	<button class="btn gap-2 bg-black" on:click={() => signIn('github')}>
-		<img src="/github-mark-white.png" class="w-8" />
+	<button class="btn gap-2 bg-black text-white m-0.5 border-none" on:click={() => signIn('github')}>
+		<img src="/github-mark-white.png" width="32px" />
 		Sign In with GitHub
+	</button>
+	<button class="btn gap-2 bg-[#7289DA] hover:bg-[#6A5ACD] text-white mx-0.5 my-1 bottom-1 relative border-none" on:click={() => signIn('discord')}>
+		<img src="/discord-mark-white.png" width="32px" />
+		Sign In with Discord
 	</button>
 {/if}
 
