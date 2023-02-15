@@ -2,6 +2,10 @@
 	import '../app.css';
 
 	import Navbar from '../lib/components/navbar.svelte';
+
+	function closeSidebar() {
+		document.getElementById('my-drawer-2').checked = false;
+	}
 </script>
 
 <div class="drawer drawer-mobile">
@@ -18,10 +22,10 @@
 		<label for="my-drawer-2" class="drawer-overlay" />
 		<ul class="menu p-4 w-80 bg-base-200 text-base-content">
 			<!-- Sidebar content here -->
-			<li><a href="/">Home</a></li>
-			<li><a href="/about">About</a></li>
-			<li><a href="/projects">Projects</a></li>
-			<li><a href="/guestbook">Guestbook</a></li>
+			<li><a href="/" on:click={closeSidebar}>Home</a></li>
+			<li><a href="/about" on:click={closeSidebar}>About</a></li>
+			<li><a href="/projects" on:click={closeSidebar}>Projects</a></li>
+			<li><a href="/guestbook" on:click={closeSidebar}>Guestbook</a></li>
 		</ul>
 	</div>
 </div>
