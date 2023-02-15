@@ -2,7 +2,6 @@
 	import { page } from '$app/stores';
 	import { signIn, signOut } from '@auth/sveltekit/client';
 	import { supabase } from '$lib/supabase';
-	import { v4 as uuidv4 } from 'uuid';
 
 	let newMessage: string;
 
@@ -20,7 +19,6 @@
 				username: $page.data.session?.user?.name,
 				message: newMessage,
 				email: $page.data.session?.user?.email,
-				id: uuidv4()
 			});
 		}
 	}
