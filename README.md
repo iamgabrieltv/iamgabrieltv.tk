@@ -27,4 +27,5 @@ You can preview the production build with `npm run preview`.
 
 ## Credits
 
-Guestbook inspired by [leerob.io](https://github.com/leerob/leerob.io) made by [leerob](https://github.com/leerob)
+Guestbook inspired by [leerob.io](https://github.com/leerob/leerob.io)
+Discord Presence Card inspired by [Podter's Website](https://github.com/Podter/podter.xyz)
