@@ -16,15 +16,11 @@
 <div class="grid place-content-center">
 	<a
 		href="https://discord.com/users/468100897860485120"
-		class="hover:scale-[1.025] transition-all duration-75 cursor-pointer shadow-xl h-auto w-96 rounded-md"
+		class="hover:scale-[1.025] transition-all duration-75 cursor-pointer shadow-xl h-auto w-96 rounded-md bg-base-300"
 	>
-		{#if $light}
-			<img
-				alt="Discord Presence"
-				src="https://lanyard.cnrad.dev/api/468100897860485120?theme=light&bg=e8e9eb"
-			/>
-		{:else}
-			<img alt="Discord Presence" src="https://lanyard.cnrad.dev/api/468100897860485120" />
-		{/if}
+		<img
+			alt="Discord Presence"
+			src="https://lanyard.cnrad.dev/api/468100897860485120?theme=light&idleMessage=Nothing to do currently"
+		/>
 	</a>
 </div>
