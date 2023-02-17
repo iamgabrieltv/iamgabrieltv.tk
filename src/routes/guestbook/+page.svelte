@@ -18,7 +18,7 @@
 			const { error } = await supabase.from('guestbook').insert({
 				username: $page.data.session?.user?.name,
 				message: newMessage,
-				email: $page.data.session?.user?.email,
+				email: $page.data.session?.user?.email
 			});
 		}
 	}
@@ -28,8 +28,7 @@
 <p class="text-xl mb-2">Write something nice!</p>
 
 {#if $page.data.session}
-	<small
-		>You are logged in as <strong>{$page.data.session.user?.name}</strong></small>
+	<small>You are logged in as <strong>{$page.data.session.user?.name}</strong></small>
 	<br />
 	<small class="cursor-pointer" on:click={() => signOut()}><strong>Sign Out</strong></small>
 
@@ -48,7 +47,10 @@
 		<img src="/github-mark-white.png" width="32px" />
 		Sign In with GitHub
 	</button>
-	<button class="btn gap-2 bg-[#7289DA] hover:bg-[#6A5ACD] text-white mx-0.5 my-1 bottom-1 relative border-none" on:click={() => signIn('discord')}>
+	<button
+		class="btn gap-2 bg-[#7289DA] hover:bg-[#6A5ACD] text-white mx-0.5 my-1 bottom-1 relative border-none"
+		on:click={() => signIn('discord')}
+	>
 		<img src="/discord-mark-white.png" width="32px" />
 		Sign In with Discord
 	</button>

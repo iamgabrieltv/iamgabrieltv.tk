@@ -1,6 +1,15 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { themeChange } from 'theme-change';
+	import { light } from '../theme';
+
+	function toggleThemeStore() {
+		if ($light) {
+			light.set(false);
+		} else {
+			light.set(true);
+		}
+	}
 
 	onMount(() => {
 		themeChange(false);
@@ -30,7 +39,7 @@
 		<div class="navbar-end">
 			<label class="swap swap-rotate">
 				<!-- this hidden checkbox controls the state -->
-				<input type="checkbox" data-toggle-theme="light,dark" />
+				<input type="checkbox" data-toggle-theme="light,dark" on:change={toggleThemeStore} />
 
 				<!-- sun icon -->
 				<svg
