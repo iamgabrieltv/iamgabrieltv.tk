@@ -54,7 +54,7 @@
 	</button>
 {/if}
 
-<div class="bg-base-300 rounded-sm w-auto h-1 my-4 mx-2"></div>
+<div class="divider" />
 
 <ul class="flex flex-col-reverse">
 	{#each messages as message}

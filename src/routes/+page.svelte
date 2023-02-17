@@ -6,3 +6,11 @@
 <p class="text-lg">
 	You can also leave a message in the <a class="btn-link" href="/guestbook">Guestbook</a>!
 </p>
+
+<div class="divider" />
+
+<div class="grid place-content-center">
+	<a href="https://discord.com/users/468100897860485120" class="hover:scale-[1.025] transition-all duration-75 cursor-pointer shadow-xl h-auto w-96">
+		<img alt="Discord Presence" src="https://lanyard.cnrad.dev/api/468100897860485120" />
+	</a>
+</div>
