@@ -60,61 +60,63 @@
 		{#if response.listening_to_spotify}
 			{#if activities[1]}
 				{#if activities[1].name !== 'Spotify'}
-				<div class="grid grid-cols-2 grid-flow-col">
-					{#if activities[1].assets}
-					{#if activities[1].assets.large_image.startsWith("mp:external/")}
-				<img
-				class="rounded-lg w-20"
-				src="https://media.discordapp.net/external/{activities[1].assets.large_image.replace('mp:external/', "")}"
-			/>
-			{:else}
-			<img
-				class="rounded-lg w-20"
-				src="https://cdn.discordapp.com/app-assets/{activities[1].application_id}/{activities[1].assets.large_image}.webp"
-			/>
-			{/if}
-			{:else}
-			<img
-				class="rounded-lg w-20"
-				src="/unknown_rpc.png"
-			/>
-				{/if}
-					<div class="grid grid-rows-2 grid-flow-row col-start-2">
-						<p class="font-semibold">{activities[1].name}</p>
-						{#if activities[1].details}
-						<p>{activities[1].details}</p>
+					<div class="grid grid-cols-2 grid-flow-col">
+						{#if activities[1].assets}
+							{#if activities[1].assets.large_image.startsWith('mp:external/')}
+								<img
+									class="rounded-lg w-20"
+									src="https://media.discordapp.net/external/{activities[1].assets.large_image.replace(
+										'mp:external/',
+										''
+									)}"
+								/>
+							{:else}
+								<img
+									class="rounded-lg w-20"
+									src="https://cdn.discordapp.com/app-assets/{activities[1]
+										.application_id}/{activities[1].assets.large_image}.webp"
+								/>
+							{/if}
+						{:else}
+							<img class="rounded-lg w-20" src="/unknown_rpc.png" />
 						{/if}
+						<div class="grid grid-rows-2 grid-flow-row col-start-2">
+							<p class="font-semibold">{activities[1].name}</p>
+							{#if activities[1].details}
+								<p>{activities[1].details}</p>
+							{/if}
+						</div>
 					</div>
-				</div>
-			{:else if activities[0]}
-				{#if activities[0].name !== 'Spotify'}
-				<div class="grid grid-cols-2 grid-flow-col">
-					{#if activities[0].assets}
-					{#if activities[0].assets.large_image.startsWith("mp:external/")}
-					<img
-					class="rounded-lg w-20"
-					src="https://media.discordapp.net/external/{activities[0].assets.large_image.replace('mp:external/', "")}"
-				/>
-				{:else}
-				<img
-					class="rounded-lg w-20"
-					src="https://cdn.discordapp.com/app-assets/{activities[0].application_id}/{activities[0].assets.large_image}.webp"
-				/>
-				{/if}
-			{:else}
-			<img
-				class="rounded-lg w-20"
-				src="/unknown_rpc.png"
-			/>
-				{/if}
-					<div class="grid grid-rows-2 grid-flow-row col-start-2">
-						<p class="font-semibold">{activities[0].name}</p>
-						{#if activities[0].details}
-						<p>{activities[0].details}</p>
-						{/if}
-					</div>
-				</div>
-				{/if}
+				{:else if activities[0]}
+					{#if activities[0].name !== 'Spotify'}
+						<div class="grid grid-cols-2 grid-flow-col">
+							{#if activities[0].assets}
+								{#if activities[0].assets.large_image.startsWith('mp:external/')}
+									<img
+										class="rounded-lg w-20"
+										src="https://media.discordapp.net/external/{activities[0].assets.large_image.replace(
+											'mp:external/',
+											''
+										)}"
+									/>
+								{:else}
+									<img
+										class="rounded-lg w-20"
+										src="https://cdn.discordapp.com/app-assets/{activities[0]
+											.application_id}/{activities[0].assets.large_image}.webp"
+									/>
+								{/if}
+							{:else}
+								<img class="rounded-lg w-20" src="/unknown_rpc.png" />
+							{/if}
+							<div class="grid grid-rows-2 grid-flow-row col-start-2">
+								<p class="font-semibold">{activities[0].name}</p>
+								{#if activities[0].details}
+									<p>{activities[0].details}</p>
+								{/if}
+							</div>
+						</div>
+					{/if}
 				{/if}
 			{:else}
 				<p class="font-bold text-green-400">LISTENING TO SPOTIFY</p>
@@ -129,31 +131,32 @@
 		{:else if activities[0]}
 			<div class="grid grid-cols-2 grid-flow-col">
 				{#if activities[0].assets}
-				{#if activities[0].assets.large_image.startsWith("mp:external/")}
-				<img
-				class="rounded-lg w-20"
-				src="https://media.discordapp.net/external/{activities[0].assets.large_image.replace('mp:external/', "")}"
-			/>
-			{:else}
-			<img
-				class="rounded-lg w-20"
-				src="https://cdn.discordapp.com/app-assets/{activities[0].application_id}/{activities[0].assets.large_image}.webp"
-			/>
-			{/if}
-			{:else}
-			<img
-				class="rounded-lg w-20"
-				src="/unknown_rpc.png"
-			/>
+					{#if activities[0].assets.large_image.startsWith('mp:external/')}
+						<img
+							class="rounded-lg w-20"
+							src="https://media.discordapp.net/external/{activities[0].assets.large_image.replace(
+								'mp:external/',
+								''
+							)}"
+						/>
+					{:else}
+						<img
+							class="rounded-lg w-20"
+							src="https://cdn.discordapp.com/app-assets/{activities[0]
+								.application_id}/{activities[0].assets.large_image}.webp"
+						/>
+					{/if}
+				{:else}
+					<img class="rounded-lg w-20" src="/unknown_rpc.png" />
 				{/if}
 				<div class="grid grid-rows-2 grid-flow-row col-start-2">
 					<p class="font-semibold">{activities[0].name}</p>
 					{#if activities[0].details}
 						<p>{activities[0].details}</p>
-						{/if}
+					{/if}
 				</div>
 			</div>
-			{:else}
+		{:else}
 			<div class="grid place-content-center">
 				<p class="italic">Nothing to do</p>
 			</div>
