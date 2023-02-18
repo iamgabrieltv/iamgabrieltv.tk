@@ -12,6 +12,7 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@catppuccin/tailwindcss": "^0.1.1",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
 		"autoprefixer": "^10.4.13",
@@ -29,6 +30,7 @@
 	"dependencies": {
 		"@auth/core": "^0.4.0",
 		"@auth/sveltekit": "^0.2.1",
+		"@catppuccin/palette": "^0.1.6",
 		"@supabase/supabase-js": "^2.7.1",
 		"@sveltejs/adapter-vercel": "^2.0.1",
 		"daisyui": "^2.50.0",
