@@ -61,7 +61,7 @@
 			{#if activities[1]}
 				{#if activities[1].name !== 'Spotify'}
 				<div class="grid grid-cols-2 grid-flow-col">
-					{#if activities[1].assets.large_image}
+					{#if activities[1].assets.large_image !== null}
 				<img
 				class="rounded-lg w-20"
 				src="https://{activities[1].assets.large_image.substring(62)}"
@@ -80,7 +80,7 @@
 			{:else if activities[0]}
 				{#if activities[0].name !== 'Spotify'}
 				<div class="grid grid-cols-2 grid-flow-col">
-					{#if activities[0].assets.large_image}
+					{#if activities[0].assets.large_image !== null}
 				<img
 				class="rounded-lg w-20"
 				src="https://{activities[0].assets.large_image.substring(62)}"
@@ -110,7 +110,7 @@
 			{/if}
 		{:else if activities[0]}
 			<div class="grid grid-cols-2 grid-flow-col">
-				{#if activities[0].assets.large_image}
+				{#if activities[0].assets.large_image !== null}
 				<img
 				class="rounded-lg w-20"
 				src="https://{activities[0].assets.large_image.substring(62)}"
