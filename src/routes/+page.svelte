@@ -77,7 +77,7 @@
 		{#if response.listening_to_spotify}
 			{#if activities[1]}
 				{#if activities[1].name !== 'Spotify'}
-					<div class="grid grid-cols-2 grid-flow-col">
+					<div class="flex flex-row gap-2">
 						{#if activities[1].assets}
 							{#if activities[1].assets.large_image.startsWith('mp:external/')}
 								<img
@@ -97,7 +97,7 @@
 						{:else}
 							<img class="rounded-lg w-20" src="/unknown_rpc.png" />
 						{/if}
-						<div class="grid grid-rows-2 grid-flow-row col-start-2">
+						<div class="flex flex-col">
 							<p class="font-semibold">{activities[1].name}</p>
 							{#if activities[1].details}
 								<p>{activities[1].details}</p>
@@ -106,7 +106,7 @@
 					</div>
 				{:else if activities[0]}
 					{#if activities[0].name !== 'Spotify'}
-						<div class="grid grid-cols-2 grid-flow-col">
+						<div class="flex flex-row gap-2">
 							{#if activities[0].assets}
 								{#if activities[0].assets.large_image.startsWith('mp:external/')}
 									<img
@@ -126,7 +126,7 @@
 							{:else}
 								<img class="rounded-lg w-20" src="/unknown_rpc.png" />
 							{/if}
-							<div class="grid grid-rows-2 grid-flow-row col-start-2">
+							<div class="flex flex-col">
 								<p class="font-semibold">{activities[0].name}</p>
 								{#if activities[0].details}
 									<p>{activities[0].details}</p>
@@ -139,7 +139,7 @@
 				<p class="font-bold text-green-400">LISTENING TO SPOTIFY</p>
 				<div class="grid grid-cols-2 grid-flow-col">
 					<img class="rounded-lg w-20" src={spotify.album_art_url} />
-					<div class="grid grid-rows-3 grid-cols-0 grid-flow-row col-start-2">
+					<div class="flex flex-col">
 						<p class="font-semibold">{spotify.song}</p>
 						<p>{spotify.artist}</p>
 						<progress
@@ -151,7 +151,7 @@
 				</div>
 			{/if}
 		{:else if activities[0]}
-			<div class="grid grid-cols-2 grid-flow-col">
+			<div class="flex flex-row gap-2">
 				{#if activities[0].assets}
 					{#if activities[0].assets.large_image.startsWith('mp:external/')}
 						<img
@@ -171,7 +171,7 @@
 				{:else}
 					<img class="rounded-lg w-20" src="/unknown_rpc.png" />
 				{/if}
-				<div class="grid grid-rows-2 grid-flow-row col-start-2">
+				<div class="flex flex-col">
 					<p class="font-semibold">{activities[0].name}</p>
 					{#if activities[0].details}
 						<p>{activities[0].details}</p>
