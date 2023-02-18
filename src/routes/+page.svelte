@@ -65,7 +65,7 @@
 						class="rounded-lg w-20"
 						src="https://{activities[1].assets.large_image.substring(62)}"
 					/>
-					<div class="grid grid-rows-2 grid-flow-row col-start-2 h-10">
+					<div class="grid grid-rows-2 grid-flow-row col-start-2">
 						<p class="font-semibold">{activities[1].name}</p>
 						<p>{activities[1].details}</p>
 					</div>
@@ -77,7 +77,7 @@
 						class="rounded-lg w-20"
 						src="https://{activities[0].assets.large_image.substring(62)}"
 					/>
-					<div class="grid grid-rows-2 grid-flow-row col-start-2 h-10">
+					<div class="grid grid-rows-2 grid-flow-row col-start-2">
 						<p class="font-semibold">{activities[0].name}</p>
 						<p>{activities[0].details}</p>
 					</div>
@@ -88,7 +88,7 @@
 				<p class="font-bold text-green-400">LISTENING TO SPOTIFY</p>
 				<div class="grid grid-cols-2 grid-flow-col">
 					<img class="rounded-lg w-20" src={spotify.album_art_url} />
-					<div class="grid grid-rows-2 grid-flow-row col-start-2 h-10">
+					<div class="grid grid-rows-2 grid-flow-row col-start-2">
 						<p class="font-semibold">{spotify.song}</p>
 						<p>{spotify.artist}</p>
 					</div>
@@ -100,7 +100,7 @@
 					class="rounded-lg w-20"
 					src="https://{activities[0].assets.large_image.substring(62)}"
 				/>
-				<div class="grid grid-rows-2 grid-flow-row col-start-2 h-10">
+				<div class="grid grid-rows-2 grid-flow-row col-start-2">
 					<p class="font-semibold">{activities[0].name}</p>
 					<p>{activities[0].details}</p>
 				</div>
