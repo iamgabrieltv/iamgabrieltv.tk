@@ -11,7 +11,7 @@ module.exports = {
 		require('daisyui'),
 		require('@catppuccin/tailwindcss')({
 			prefix: 'ctp',
-			defaultFlavour: 'latte'
+			defaultFlavour: 'mocha'
 		})
 	],
 	daisyui: {
