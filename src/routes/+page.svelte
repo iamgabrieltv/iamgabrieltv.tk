@@ -137,7 +137,7 @@
 				{/if}
 			{:else}
 				<p class="font-bold text-green-400">LISTENING TO SPOTIFY</p>
-				<div class="grid grid-cols-2 grid-flow-col">
+				<div class="flex flex-row gap-2">
 					<img class="rounded-lg w-20" src={spotify.album_art_url} />
 					<div class="flex flex-col">
 						<p class="font-semibold">{spotify.song}</p>
