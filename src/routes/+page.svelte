@@ -96,7 +96,7 @@
 					class="rounded-lg w-20"
 					src="https://{activities[0].assets.large_image.substring(62)}"
 				/>
-				<div class="grid grid-rows-2 grid-flow-row col-start-2">
+				<div class="grid grid-rows-2 grid-flow-row col-start-2 h-10">
 					<p class="font-semibold">{activities[0].name}</p>
 					<p>{activities[0].details}</p>
 				</div>
