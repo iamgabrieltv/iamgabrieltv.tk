@@ -30,7 +30,7 @@
 		<div class="navbar-end">
 			<label class="swap swap-rotate">
 				<!-- this hidden checkbox controls the state -->
-				<input type="checkbox" data-toggle-theme="ctp-latte,ctp-mocha" />
+				<input type="checkbox" data-toggle-theme="ctp-mocha,ctp-latte" />
 
 				<!-- sun icon -->
 				<svg
