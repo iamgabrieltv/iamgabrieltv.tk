@@ -94,7 +94,7 @@
 					</div>
 				</div>
 			{/if}
-		{:else if activities}
+		{:else if activities[0]}
 			<div class="grid grid-cols-2 grid-flow-col">
 				<img
 					class="rounded-lg w-20"
@@ -104,6 +104,10 @@
 					<p class="font-semibold">{activities[0].name}</p>
 					<p>{activities[0].details}</p>
 				</div>
+			</div>
+			{:else}
+			<div class="grid place-content-center">
+				<p class="italic">Nothing to do</p>
 			</div>
 		{/if}
 	</a>
