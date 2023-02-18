@@ -58,7 +58,8 @@
 		<div class="divider m-0" />
 
 		{#if response.listening_to_spotify}
-			{#if activities[1].name !== 'Spotify'}
+			{#if activities[1]}
+				{#if activities[1].name !== 'Spotify'}
 				<div class="grid grid-cols-2 grid-flow-col">
 					<img
 						class="rounded-lg w-20"
@@ -69,7 +70,8 @@
 						<p>{activities[1].details}</p>
 					</div>
 				</div>
-			{:else if activities[0].name !== 'Spotify'}
+			{:else if activities[0]}
+				{#if activities[0].name !== 'Spotify'}
 				<div class="grid grid-cols-2 grid-flow-col">
 					<img
 						class="rounded-lg w-20"
@@ -80,6 +82,8 @@
 						<p>{activities[0].details}</p>
 					</div>
 				</div>
+				{/if}
+				{/if}
 			{:else}
 				<p class="font-bold text-green-400">LISTENING TO SPOTIFY</p>
 				<div class="grid grid-cols-2 grid-flow-col">
