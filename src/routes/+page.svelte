@@ -23,7 +23,7 @@
 <div class="grid place-content-center">
 	<a
 		href="https://discord.com/users/468100897860485120"
-		class="hover:scale-[1.025] transition-all duration-75 cursor-pointer shadow-xl h-auto w-80 rounded-lg bg-base-300 p-4"
+		class="hover:scale-[1.025] transition-all duration-75 cursor-pointer shadow-xl h-auto w-auto md:w-96 lg:w-96 rounded-lg bg-base-300 p-4"
 	>
 		<div class="avatar">
 			{#if status === 'online'}

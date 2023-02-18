@@ -2,7 +2,7 @@
 
 <p class="text-xl mb-2">Hi! I am Gabriel. I do Web Development stuff for fun.</p>
 
-<div class="card w-80 bg-base-300 shadow-xl">
+<div class="card w-auto md:w-96 lg:w-96 bg-base-300 shadow-xl">
 	<div class="card-body text-lg">
 		<h2 class="card-title text-2xl">Facts about me</h2>
 		<p class="font-semibold">Interests</p>
