@@ -7,6 +7,23 @@
 	const status = response.discord_status;
 	const spotify = response.spotify;
 	const activities = response.activities;
+	let progress = 0;
+	let totalDuration = 0;
+
+	if (spotify) {
+		totalDuration = Math.floor((spotify.timestamps.end - spotify.timestamps.start) / 1000);
+		progress = Math.floor((Date.now() - spotify.timestamps.start) / 1000);
+		function updateProgress() {
+			progress = Math.floor((Date.now() - spotify.timestamps.start) / 1000);
+		}
+
+		let intervalID = setInterval(function () {
+			updateProgress();
+			if (progress >= totalDuration) {
+				clearInterval(intervalID);
+			}
+		}, 1000);
+	}
 </script>
 
 <h1 class="text-3xl font-semibold">Hello Hooman!</h1>
@@ -122,9 +139,14 @@
 				<p class="font-bold text-green-400">LISTENING TO SPOTIFY</p>
 				<div class="grid grid-cols-2 grid-flow-col">
 					<img class="rounded-lg w-20" src={spotify.album_art_url} />
-					<div class="grid grid-rows-2 grid-flow-row col-start-2">
+					<div class="grid grid-rows-3 grid-cols-0 grid-flow-row col-start-2">
 						<p class="font-semibold">{spotify.song}</p>
 						<p>{spotify.artist}</p>
+						<progress
+							class="progress progress-success w-full"
+							value={progress}
+							max={totalDuration}
+						/>
 					</div>
 				</div>
 			{/if}
