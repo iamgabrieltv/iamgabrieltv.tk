@@ -64,7 +64,7 @@
 					{#if activities[1].assets}
 				<img
 				class="rounded-lg w-20"
-				src="https://{activities[1].assets.large_image.substring(62)}"
+				src="https://media.discordapp.net/external/{activities[1].assets.large_image.replace('mp:external/', "")}"
 			/>
 			{:else}
 			<img
@@ -85,7 +85,7 @@
 					{#if activities[0].assets}
 				<img
 				class="rounded-lg w-20"
-				src="https://{activities[0].assets.large_image.substring(62)}"
+				src="https://media.discordapp.net/external/{activities[0].assets.large_image.replace('mp:external/', "")}"
 			/>
 			{:else}
 			<img
@@ -117,7 +117,7 @@
 				{#if activities[0].assets}
 				<img
 				class="rounded-lg w-20"
-				src="https://{activities[0].assets.large_image.substring(62)}"
+				src="https://media.discordapp.net/external/{activities[0].assets.large_image.replace('mp:external/', "")}"
 			/>
 			{:else}
 			<img
