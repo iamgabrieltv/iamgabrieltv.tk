@@ -56,19 +56,27 @@
 		</div>
 		<div class="divider m-0" />
 			{#if response.listening_to_spotify}
-			{#if activities[1]}
+			{#if activities[1].name !== "Spotify"}
 			<div class="grid grid-cols-2 grid-flow-col">
 				<img class="rounded-lg w-20" src="https://{activities[1].assets.large_image.substring(62)}" />
-				<div class="grid grid-rows-2 grid-flow-row col-start-2">
+				<div class="grid grid-rows-2 grid-flow-row col-start-2 h-10">
 					<p class="font-semibold">{activities[1].name}</p>
 					<p>{activities[1].details}</p>
+				</div>
+		</div>
+			{:else if activities[0].name !== "Spotify"}
+			<div class="grid grid-cols-2 grid-flow-col">
+				<img class="rounded-lg w-20" src="https://{activities[0].assets.large_image.substring(62)}" />
+				<div class="grid grid-rows-2 grid-flow-row col-start-2 h-10">
+					<p class="font-semibold">{activities[0].name}</p>
+					<p>{activities[0].details}</p>
 				</div>
 		</div>
 			{:else}
 			<p class="font-bold text-green-400">LISTENING TO SPOTIFY</p>
 			<div class="grid grid-cols-2 grid-flow-col">
 					<img class="rounded-lg w-20" src="{spotify.album_art_url}" />
-					<div class="grid grid-rows-2 grid-flow-row col-start-2">
+					<div class="grid grid-rows-2 grid-flow-row col-start-2 h-10">
 						<p class="font-semibold">{spotify.song}</p>
 						<p>{spotify.artist}</p>
 				 </div>
