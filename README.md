@@ -29,3 +29,4 @@ You can preview the production build with `npm run preview`.
 
 Guestbook inspired by [leerob.io](https://github.com/leerob/leerob.io)
 Discord Presence Card inspired by [Podter's Website](https://github.com/Podter/podter.xyz)
+Catppuccin Mocha and Catppuccin Latte themes by [Catpuccin](https://github.com/catppuccin)
