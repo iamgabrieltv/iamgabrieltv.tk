@@ -61,10 +61,17 @@
 			{#if activities[1]}
 				{#if activities[1].name !== 'Spotify'}
 				<div class="grid grid-cols-2 grid-flow-col">
-					<img
-						class="rounded-lg w-20"
-						src="https://{activities[1].assets.large_image.substring(62)}"
-					/>
+					{#if activities[1].assets.large_image}
+				<img
+				class="rounded-lg w-20"
+				src="https://{activities[1].assets.large_image.substring(62)}"
+			/>
+			{:else}
+			<img
+				class="rounded-lg w-20"
+				src="/unknown_rpc.png"
+			/>
+				{/if}
 					<div class="grid grid-rows-2 grid-flow-row col-start-2">
 						<p class="font-semibold">{activities[1].name}</p>
 						<p>{activities[1].details}</p>
@@ -73,10 +80,17 @@
 			{:else if activities[0]}
 				{#if activities[0].name !== 'Spotify'}
 				<div class="grid grid-cols-2 grid-flow-col">
-					<img
-						class="rounded-lg w-20"
-						src="https://{activities[0].assets.large_image.substring(62)}"
-					/>
+					{#if activities[0].assets.large_image}
+				<img
+				class="rounded-lg w-20"
+				src="https://{activities[0].assets.large_image.substring(62)}"
+			/>
+			{:else}
+			<img
+				class="rounded-lg w-20"
+				src="/unknown_rpc.png"
+			/>
+				{/if}
 					<div class="grid grid-rows-2 grid-flow-row col-start-2">
 						<p class="font-semibold">{activities[0].name}</p>
 						<p>{activities[0].details}</p>
@@ -96,10 +110,17 @@
 			{/if}
 		{:else if activities[0]}
 			<div class="grid grid-cols-2 grid-flow-col">
+				{#if activities[0].assets.large_image}
 				<img
-					class="rounded-lg w-20"
-					src="https://{activities[0].assets.large_image.substring(62)}"
-				/>
+				class="rounded-lg w-20"
+				src="https://{activities[0].assets.large_image.substring(62)}"
+			/>
+			{:else}
+			<img
+				class="rounded-lg w-20"
+				src="/unknown_rpc.png"
+			/>
+				{/if}
 				<div class="grid grid-rows-2 grid-flow-row col-start-2">
 					<p class="font-semibold">{activities[0].name}</p>
 					<p>{activities[0].details}</p>
