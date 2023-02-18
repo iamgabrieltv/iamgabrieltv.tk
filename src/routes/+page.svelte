@@ -62,10 +62,17 @@
 				{#if activities[1].name !== 'Spotify'}
 				<div class="grid grid-cols-2 grid-flow-col">
 					{#if activities[1].assets}
+					{#if activities[1].assets.large_image.startsWith("mp:external/")}
 				<img
 				class="rounded-lg w-20"
 				src="https://media.discordapp.net/external/{activities[1].assets.large_image.replace('mp:external/', "")}"
 			/>
+			{:else}
+			<img
+				class="rounded-lg w-20"
+				src="https://cdn.discordapp.com/app-assets/{activities[1].application_id}/{activities[1].assets.large_image}.webp"
+			/>
+			{/if}
 			{:else}
 			<img
 				class="rounded-lg w-20"
@@ -83,10 +90,17 @@
 				{#if activities[0].name !== 'Spotify'}
 				<div class="grid grid-cols-2 grid-flow-col">
 					{#if activities[0].assets}
+					{#if activities[0].assets.large_image.startsWith("mp:external/")}
+					<img
+					class="rounded-lg w-20"
+					src="https://media.discordapp.net/external/{activities[0].assets.large_image.replace('mp:external/', "")}"
+				/>
+				{:else}
 				<img
-				class="rounded-lg w-20"
-				src="https://media.discordapp.net/external/{activities[0].assets.large_image.replace('mp:external/', "")}"
-			/>
+					class="rounded-lg w-20"
+					src="https://cdn.discordapp.com/app-assets/{activities[0].application_id}/{activities[0].assets.large_image}.webp"
+				/>
+				{/if}
 			{:else}
 			<img
 				class="rounded-lg w-20"
@@ -115,10 +129,17 @@
 		{:else if activities[0]}
 			<div class="grid grid-cols-2 grid-flow-col">
 				{#if activities[0].assets}
+				{#if activities[0].assets.large_image.startsWith("mp:external/")}
 				<img
 				class="rounded-lg w-20"
 				src="https://media.discordapp.net/external/{activities[0].assets.large_image.replace('mp:external/', "")}"
 			/>
+			{:else}
+			<img
+				class="rounded-lg w-20"
+				src="https://cdn.discordapp.com/app-assets/{activities[0].application_id}/{activities[0].assets.large_image}.webp"
+			/>
+			{/if}
 			{:else}
 			<img
 				class="rounded-lg w-20"
