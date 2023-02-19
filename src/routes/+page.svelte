@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
+
 	export let data;
 	let { response } = data;
 	$: ({ response } = data);
@@ -10,17 +12,24 @@
 	let progress = 0;
 	let totalDuration = 0;
 
-	if (spotify) {
+	if (activities[0] && browser) {
+		let updateInterval = setInterval(function () {
+			location.reload();
+		}, 60000);
+	}
+
+	if (spotify && browser) {
 		totalDuration = Math.floor((spotify.timestamps.end - spotify.timestamps.start) / 1000);
 		progress = Math.floor((Date.now() - spotify.timestamps.start) / 1000);
 		function updateProgress() {
 			progress = Math.floor((Date.now() - spotify.timestamps.start) / 1000);
 		}
 
-		let intervalID = setInterval(function () {
+		let updateInterval = setInterval(function () {
 			updateProgress();
 			if (progress >= totalDuration) {
-				clearInterval(intervalID);
+				clearInterval(updateInterval);
+				location.reload();
 			}
 		}, 1000);
 	}
