@@ -49,7 +49,7 @@
 <div class="grid place-content-center">
 	<a
 		href="https://discord.com/users/468100897860485120"
-		class="hover:scale-[1.025] transition-all duration-75 cursor-pointer shadow-xl h-auto w-auto md:w-96 lg:w-96 rounded-lg bg-base-300 p-4"
+		class="hover:scale-[1.025] transition-all duration-75 cursor-pointer shadow-xl h-auto w-auto rounded-lg bg-base-300 p-4"
 	>
 		<div class="avatar">
 			{#if status === 'online'}
@@ -111,6 +111,7 @@
 							{#if activities[1].details}
 								<p>{activities[1].details}</p>
 							{/if}
+							{#if activities[1].state}<p>{activities[1].state}</p>{/if}
 						</div>
 					</div>
 				{:else if activities[0]}
@@ -140,6 +141,7 @@
 								{#if activities[0].details}
 									<p>{activities[0].details}</p>
 								{/if}
+								{#if activities[0].state}<p>{activities[0].state}</p>{/if}
 							</div>
 						</div>
 					{/if}
@@ -185,6 +187,7 @@
 					{#if activities[0].details}
 						<p>{activities[0].details}</p>
 					{/if}
+					{#if activities[0].state}<p>{activities[0].state}</p>{/if}
 				</div>
 			</div>
 		{:else}
