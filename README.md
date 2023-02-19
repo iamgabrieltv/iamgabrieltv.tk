@@ -1,6 +1,8 @@
 # iamgabrieltv.tk
 
 My personal website with facts about me and my projects
+<br/>
+[![GitHub deployments](https://img.shields.io/github/deployments/iamgabrieltv/iamgabrieltv.tk/Production?label=vercel&logo=vercel&logoColor=white&style=for-the-badge)](https://iamgabrieltv.tk/)
 
 ## Developing
 
@@ -27,6 +29,6 @@ You can preview the production build with `npm run preview`.
 
 ## Credits
 
-Guestbook inspired by [leerob.io](https://github.com/leerob/leerob.io)
-Discord Presence Card inspired by [Podter's Website](https://github.com/Podter/podter.xyz)
+Guestbook inspired by [leerob.io](https://github.com/leerob/leerob.io) <br/>
+Discord Presence Card inspired by [Podter's Website](https://github.com/Podter/podter.xyz) <br/>
 Catppuccin Mocha and Catppuccin Latte themes by [Catpuccin](https://github.com/catppuccin)
