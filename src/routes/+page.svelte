@@ -10,6 +10,22 @@
 	let progress = 0;
 	let totalDuration = 0;
 
+	if (activities[0]) {
+		async function updateRPC() {
+			const response = await fetch('https://api.lanyard.rest/v1/users/468100897860485120', {
+				method: 'GET'
+			});
+
+			const { data: responseData }: { data: Query } = await response.json();
+
+			return { response: responseData ?? [] };
+		}
+
+		let RPCInterval = setInterval(function () {
+			updateRPC();
+		}, 60000);
+	}
+
 	if (spotify) {
 		totalDuration = Math.floor((spotify.timestamps.end - spotify.timestamps.start) / 1000);
 		progress = Math.floor((Date.now() - spotify.timestamps.start) / 1000);
@@ -17,10 +33,10 @@
 			progress = Math.floor((Date.now() - spotify.timestamps.start) / 1000);
 		}
 
-		let intervalID = setInterval(function () {
+		let progressInterval = setInterval(function () {
 			updateProgress();
 			if (progress >= totalDuration) {
-				clearInterval(intervalID);
+				clearInterval(progressInterval);
 			}
 		}, 1000);
 	}
