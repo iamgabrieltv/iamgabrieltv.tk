@@ -37,10 +37,10 @@
 			type="text"
 			placeholder="Message"
 			id="input"
-			class="input w-full max-w-xs bg-base-200 mb-1 mt-1"
+			class="input w-full max-w-xs input-accent bg-base-200 mb-1 mt-1"
 			bind:value={newMessage}
 		/>
-		<button type="submit" class="btn btn-ghost bg-base-300">Sign</button>
+		<button type="submit" class="btn btn-primary">Sign</button>
 	</form>
 {:else}
 	<button class="btn gap-2 bg-black text-white m-0.5 border-none" on:click={() => signIn('github')}>

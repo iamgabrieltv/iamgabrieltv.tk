@@ -18,8 +18,8 @@ module.exports = {
 		themes: [
 			{
 				'ctp-latte': {
-					primary: variants.latte.red.hex,
-					secondary: variants.latte.blue.hex,
+					primary: variants.latte.blue.hex,
+					secondary: variants.latte.red.hex,
 					accent: variants.latte.teal.hex,
 					neutral: variants.latte.crust.hex,
 					'base-100': variants.latte.base.hex,
@@ -31,8 +31,8 @@ module.exports = {
 			},
 			{
 				'ctp-mocha': {
-					primary: variants.mocha.red.hex,
-					secondary: variants.mocha.blue.hex,
+					primary: variants.mocha.blue.hex,
+					secondary: variants.mocha.red.hex,
 					accent: variants.mocha.teal.hex,
 					neutral: variants.mocha.crust.hex,
 					'base-100': variants.mocha.base.hex,
