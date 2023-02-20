@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
+	import { onMount, onDestroy } from 'svelte';
 
 	export let data;
 	let { response } = data;
@@ -11,28 +12,37 @@
 	const activities = response.activities;
 	let progress = 0;
 	let totalDuration = 0;
+	let spotifyUpdateInterval;
+	let activitiesUpdateInterval;
 
-	if (activities[0] && browser) {
-		let updateInterval = setInterval(function () {
-			location.reload();
-		}, 60000);
-	}
-
-	if (spotify && browser) {
-		totalDuration = Math.floor((spotify.timestamps.end - spotify.timestamps.start) / 1000);
-		progress = Math.floor((Date.now() - spotify.timestamps.start) / 1000);
-		function updateProgress() {
-			progress = Math.floor((Date.now() - spotify.timestamps.start) / 1000);
+	onMount(() => {
+		if (activities[0] && browser) {
+			activitiesUpdateInterval = setInterval(function () {
+				location.reload();
+			}, 60000);
 		}
 
-		let updateInterval = setInterval(function () {
-			updateProgress();
-			if (progress >= totalDuration) {
-				clearInterval(updateInterval);
-				location.reload();
+		if (spotify && browser) {
+			totalDuration = Math.floor((spotify.timestamps.end - spotify.timestamps.start) / 1000);
+			progress = Math.floor((Date.now() - spotify.timestamps.start) / 1000);
+			function updateProgress() {
+				progress = Math.floor((Date.now() - spotify.timestamps.start) / 1000);
 			}
-		}, 1000);
-	}
+
+			spotifyUpdateInterval = setInterval(function () {
+				updateProgress();
+				if (progress >= totalDuration) {
+					clearInterval(spotifyUpdateInterval);
+					location.reload();
+				}
+			}, 1000);
+		}
+	});
+
+	onDestroy(() => {
+		clearInterval(spotifyUpdateInterval);
+		clearInterval(activitiesUpdateInterval);
+	});
 </script>
 
 <h1 class="text-3xl font-semibold">Hello Hooman!</h1>
@@ -46,10 +56,10 @@
 
 <div class="divider" />
 
-<div class="grid place-content-center">
+<div class="flex flex-row place-content-center">
 	<a
 		href="https://discord.com/users/468100897860485120"
-		class="hover:scale-[1.025] transition-all duration-75 cursor-pointer shadow-xl h-auto w-auto rounded-lg bg-base-300 p-4"
+		class="m-1 hover:scale-[1.025] transition-all duration-75 cursor-pointer shadow-xl h-auto w-auto rounded-lg bg-base-300 p-4"
 	>
 		<div class="avatar">
 			{#if status === 'online'}
