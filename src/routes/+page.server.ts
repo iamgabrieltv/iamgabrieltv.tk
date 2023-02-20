@@ -5,5 +5,5 @@ export async function load() {
 
 	const { data: responseData }: { data: Query } = await response.json();
 
-	return { response: responseData ?? [] };
+	return { lanyardResponse: responseData ?? [] };
 }
