@@ -1,5 +1,6 @@
 <script lang="ts">
 	import DiscordRpc from '$lib/components/discord-rpc.svelte';
+	import DestinyActivity from '$lib/components/destiny-activity.svelte';
 
 	export let data;
 </script>
@@ -17,4 +18,5 @@
 
 <div class="flex flex-row place-content-center">
 	<DiscordRpc {data} />
+	<DestinyActivity {data} />
 </div>
