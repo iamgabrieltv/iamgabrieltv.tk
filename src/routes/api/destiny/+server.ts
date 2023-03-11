@@ -22,11 +22,11 @@ export const GET = (async () => {
 		)
 	).json();
 
-	function activityName() {
+	function currentActivity() {
 		const characterActivities = profile.Response.characterActivities.data;
 		const keys = Object.keys(characterActivities);
-		const firstGuardian = characterActivities[keys[0]];
-		const currentActivityHash = firstGuardian.currentActivityHash;
+		const firstGuardianActivities = characterActivities[keys[0]];
+		const currentActivityHash = firstGuardianActivities.currentActivityHash;
 
 		switch (currentActivityHash) {
 			case 0:
@@ -36,11 +36,31 @@ export const GET = (async () => {
 				return 'In Orbit';
 				break;
 			default:
-				const definitions = Object.keys(contentManifest.DestinyActivityDefinition);
-				const matchingObject = definitions.find((obj) => obj === currentActivityHash);
-				return definitions;
+				const currentActivity = contentManifest.DestinyActivityDefinition[currentActivityHash];
+				return {
+					imageURL: contentManifest.DestinyActivityDefinition[currentActivityHash].pgcrImage,
+					placeName:
+						contentManifest.DestinyPlaceDefinition[currentActivity.placeHash].displayProperties
+							.name,
+					typeName:
+						contentManifest.DestinyActivityTypeDefinition[currentActivity.activityTypeHash]
+							.displayProperties.name
+				};
 		}
 	}
 
-	return json(activityName());
+	const firstGuardianKeys = Object.keys(profile.Response.characters.data);
+	const firstGuardian = profile.Response.characters.data[firstGuardianKeys[0]];
+
+	return json({
+		data: {
+			currentActivity: currentActivity(),
+			character: {
+				light: firstGuardian.light,
+				emblem: firstGuardian.emblemBackgroundPath,
+				username: profile.Response.profile.data.userInfo.bungieGlobalDisplayName,
+				userDiscriminator: profile.Response.profile.data.userInfo.bungieGlobalDisplayNameCode
+			}
+		}
+	});
 }) satisfies RequestHandler;
