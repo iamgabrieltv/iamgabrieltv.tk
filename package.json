@@ -1,6 +1,6 @@
 {
 	"name": "iamgabrieltv.tk",
-	"version": "0.0.1",
+	"version": "1.1.1",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
@@ -13,6 +13,7 @@
 	},
 	"devDependencies": {
 		"@catppuccin/tailwindcss": "^0.1.1",
+		"@iconify/svelte": "^3.1.0",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
 		"autoprefixer": "^10.4.13",
